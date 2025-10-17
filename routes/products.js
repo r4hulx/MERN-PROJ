@@ -1,10 +1,7 @@
-// routes/products.js
 
 const express = require('express');
 const router = express.Router();
 
-// In-memory 'database' for storing product data.
-// In a real application, this would be a database like MongoDB or PostgreSQL.
 let products = [
   { id: 1, name: 'Laptop Pro', price: 1200, category: 'Electronics' },
   { id: 2, name: 'Wireless Mouse', price: 45, category: 'Electronics' },
@@ -27,8 +24,7 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   const newProduct = req.body;
-
-  // Basic validation to ensure the request body has the required fields.
+.
   if (!newProduct.name || !newProduct.price) {
     return res.status(400).json({ msg: 'Please include a name and price' });
   }
